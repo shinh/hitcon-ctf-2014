@@ -1,0 +1,34 @@
+a=42//33;--a;''';/+%q(
+;b=42//33;{-
+;
+#include <fcntl.h>
+#include <unistd.h>
+int main(){
+  char buf[999];
+  int fd = open("flag", O_RDONLY);
+  int len = read(fd, buf, 999);
+  write(1, buf, len);
+  return 0;
+}
+/*
+
+-}
+(//)=(/)
+main = do
+  str <- readFile "flag"
+  putStr str
+{-
+
+)
+BEGIN{
+print File.read('flag')
+exit
+}
+%q(
+
+'''
+import sys
+sys.stdout.write(open('flag').read())
+'''
+
+)#*///-}--'''
